@@ -1,0 +1,38 @@
+{
+  "name": "karma-destoroyah",
+  "version": "0.1.0",
+  "description": "karma adapter for the destoroyah testing framework",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "gulp; karma start --single-run"
+  },
+  "keywords": [
+    "karma",
+    "karma-plugin",
+    "karma-adapter",
+    "destoroyah",
+    "quickcheck",
+    "test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "destoroyah": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-coffee": "^2.1.1",
+    "karma": "^0.12.21",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "karma-mocha-reporter": "^0.2.8",
+    "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sloosch/karma-destoroyah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sloosch/karma-destoroyah/issues"
+  },
+  "homepage": "https://github.com/sloosch/karma-destoroyah"
+}
