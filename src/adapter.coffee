@@ -16,13 +16,13 @@ destoroyah.karma.reporter = (karma) -> (bitterStruggle) ->
       time : destResult.time
       id : rampage.id
     result.log = if destResult.failed
-      ['Defeated by the monster with attack : ' + destoroyah.argFormat destResult.lastArguments]
+      ['Defeated by the monster with attack : ' + destoroyah.modules.util.argFormat destResult.lastArguments]
     else
       []
     karma.result result
   bitterStruggle.on 'error rampage', (monster, rampage, error) ->
     msg = 'Found a weak spot, fight ended unfair with error ' + error
-    msg += '\nfought with arguments ' + destoroyah.argFormat(error.__destoroyah) if error.__destoroyah?
+    msg += '\nfought with arguments ' + destoroyah.modules.util.argFormat(error.__destoroyah) if error.__destoroyah?
     result =
       description : rampage.reason
       skipped : false
