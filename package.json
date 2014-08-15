@@ -1,6 +1,6 @@
 {
   "name": "karma-destoroyah",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "karma adapter for the destoroyah testing framework",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "destoroyah": "^0.1.5"
+    "destoroyah": "^0.1.6"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
