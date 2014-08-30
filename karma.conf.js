@@ -22,6 +22,9 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
+      //this test runs for a very long time in the browser and is not necessary to test
+      //the function of destoroyah
+      '**/BhargavaZil.coffee'
     ],
 
 

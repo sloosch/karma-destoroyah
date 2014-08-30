@@ -1,13 +1,21 @@
 destoroyah.karma = {}
 destoroyah.karma.reporter = (karma) -> (bitterStruggle) ->
+  timer = null
   bitterStruggle.on 'start', ->
     karma.info
       total : bitterStruggle.monsters.reduce ((acc, m) -> acc + m.rampages.length), 0
       specs : bitterStruggle.monsters.reduce ((acc, m) -> acc.concat m.rampages.map (r) -> r.reason), []
   bitterStruggle.on 'end', ->
     karma.complete()
+  bitterStruggle.on 'start rampage', (monster, rampage) ->
+    clearInterval(timer) if timer
+    #kind of a hearbeat for long running tests to stop karma from disconnecting after 10s
+    timer = setInterval ->
+      karma.info 'Long running rampage "' + rampage.reason + '" of "' + monster.reason + '"...'
+    ,9000
   bitterStruggle.on 'end rampage', (monster, rampage, destResult) ->
-
+    clearInterval(timer) if timer
+    timer = null
     result =
       description : rampage.reason + ' (' + destResult.angryness + ' [+' + destResult.combos + '])'
       skipped : false
