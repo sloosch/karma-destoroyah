@@ -27,6 +27,10 @@ destoroyah.karma.reporter = (karma) -> (bitterStruggle) ->
       ['Defeated by the monster with attack : ' + destoroyah.modules.util.argFormat destResult.lastArguments]
     else
       []
+
+    if rampage.inspected
+      result.description += ' » ' + destoroyah.modules.util.argFormat([rampage.inspectedVal])
+
     karma.result result
   bitterStruggle.on 'error rampage', (monster, rampage, error) ->
     msg = 'Found a weak spot, fight ended unfair with error ' + error
