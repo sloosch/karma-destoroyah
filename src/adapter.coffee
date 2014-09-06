@@ -48,3 +48,5 @@ destoroyah.karma.reporter = (karma) -> (bitterStruggle) ->
 window.__karma__.start = (config) ->
   destoroyah.karma.reporter(window.__karma__)(destoroyah.bitterStruggle)
   destoroyah.bitterStruggle.fight()
+  .catch (e) ->
+    window.__karma__.error '' + e
